@@ -1,1 +1,1 @@
-/home/nishumurmu/.local/share/omf/themes/simple-ass-prompt/fish_prompt.fish
+/home/nishumurmu/.local/share/omf/themes/slacker/fish_prompt.fish

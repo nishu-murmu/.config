@@ -64,10 +64,10 @@ exec_always picom --config ~/.config/picom/picom.conf
 bindsym $mod+x exec betterlockscreen -u /home/nishumurmu/Pictures/Wallpapers/328893.jpg --blur
 
 # Shutdown the computer
-#bindsym $mod+Shift+s exec shutdown now
+bindsym $mod+Shift+s exec shutdown now
 
 #Reboot Machine
-#bindsym $mod+r exec systemctl reboot
+bindsym $mod+re exec systemctl reboot
 
 # Suspend the system to RAM (needs swap space)
 #bindsym $mod+s exec systemctl suspend
@@ -238,6 +238,12 @@ mode "resize" {
 # 13B] Enter Resize Mode
 bindsym $mod+r mode "resize"
 
+
+# starting appilcations on restart
+exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/xfce4-terminal'
+exec --no-startup-id i3-msg 'workspace 2:Web; exec /usr/bin/xfce4-terminal'
+exec --no-startup-id i3-msg 'workspace 3:Web; exec /usr/bin/google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace 4:Web; exec /var/lib/snapd/snap/notion-snap/16/notion-snap'
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available). Commented out due to use of polybar. If you want to
 # use i3 bars (status or blocks) this are some examples on how you can do it.
@@ -261,7 +267,7 @@ for_window [class="firefox"] move to workspace $ws5
 # workspaces.
 bindsym $mod+b workspace 5; exec firefox
 
-
+exec cbatticon
 #Multi Monitor (Dual Monitor, extended monitor)
 #Replace HDMI2 with DVI-2, VGA-2, DP-2, DVI-2 etc. Get value by typing xrandr in the terminal.
 #If X is a natural number, then;
